@@ -1,0 +1,30 @@
+plugins {
+    id "org.springframework.boot" version "1.5.3.RELEASE"
+}
+
+apply plugin: "groovy"
+
+jar {
+    baseName = "helloworld_on_jetty"
+    version = "0.0.1-SNAPSHOT"
+}
+
+springBoot {
+    executable = true
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")  {
+        exclude module: 'org.springframework.boot:spring-boot-starter-tomcat'
+    }
+    compile "org.springframework.boot:spring-boot-starter-jetty"
+    compile "org.codehaus.groovy:groovy"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+}
