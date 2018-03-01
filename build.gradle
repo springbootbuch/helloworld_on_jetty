@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")  {
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+        exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
     }
     compile "org.springframework.boot:spring-boot-starter-jetty"
     compile "org.codehaus.groovy:groovy"
