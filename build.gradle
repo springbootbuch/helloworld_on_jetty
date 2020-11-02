@@ -1,9 +1,10 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.0.RELEASE'
+        springBootVersion = '2.4.0-RC1'
     }
     repositories {
         mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -25,6 +26,7 @@ bootJar {
 
 repositories {
     mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
 }
 
 dependencies {
@@ -34,4 +36,8 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-jetty"
     compile "org.codehaus.groovy:groovy"
     testCompile "org.springframework.boot:spring-boot-starter-test"
+}
+
+test {
+  useJUnitPlatform()
 }
